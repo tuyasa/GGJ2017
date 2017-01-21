@@ -25,10 +25,8 @@ public class GameManager : PersistentSingleton<GameManager> {
 	public void NextLevel() {
 		level++;
 		if(level <= maxLevel) {
-			Debug.Log("ererr");
 			SceneManager.LoadScene("Level"+level);	
 		}else {
-			Debug.Log("ererr");
 			SceneManager.LoadScene("Menu");
 		}
 

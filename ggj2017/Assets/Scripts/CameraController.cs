@@ -9,7 +9,11 @@ public class CameraController : MonoBehaviour {
 	public float offset;
 	// Use this for initialization
 	void Start () {
-		
+		if(target == null) {
+			target = FindObjectOfType<WaveManager>().transform;
+		}else  {
+			Debug.LogError("You have to put a wavemanger TROLLOLOL");	
+		}
 	}
 	
 	// Update is called once per frame

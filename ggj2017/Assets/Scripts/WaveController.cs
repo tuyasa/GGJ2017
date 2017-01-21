@@ -13,8 +13,7 @@ public class WaveController : MonoBehaviour {
 	public int directionY;
 	// Use this for initialization
 	void Start () {
-//		directionY = 1;
-		currentPoint = Vector2.zero;
+		currentPoint = transform.position;	
 	}	
 
 	void Update() {
@@ -27,7 +26,6 @@ public class WaveController : MonoBehaviour {
 	void FixedUpdate () {
 		currentPoint.x += speedX * Time.deltaTime;
 		currentPoint.y += speedY * directionY * Time.deltaTime;
-
 		transform.position = new Vector3(currentPoint.x, currentPoint.y, transform.position.z);
 	}
 }
