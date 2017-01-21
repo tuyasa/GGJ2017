@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SoundManager : PersistentSingleton<SoundManager> {
-
-    public static SoundManager instance = null;
-	public AudioSource audio;
+	public new AudioSource audio;
 
 	[System.Serializable]
 	public class LevelSounds {
@@ -22,15 +20,6 @@ public class SoundManager : PersistentSingleton<SoundManager> {
     {
         AudioSource audio = GetComponent<AudioSource>();
         audio.Play();
-    }
-
-    void Awake()
-    {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
     }
 
 	// Use this for initialization
