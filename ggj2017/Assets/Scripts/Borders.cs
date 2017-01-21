@@ -25,8 +25,8 @@ public class Borders : MonoBehaviour {
 
     	void OnCollisionEnter2D(Collision2D other) {
 //    		Debug.LogError(other.gameObject.name);
-		Debug.LogError(this.gameObject.name);
-    		
+//		Debug.LogError(this.gameObject.name);
+		GameManager.Instance.Retry();
     	}
 
     	public void Retry() {
