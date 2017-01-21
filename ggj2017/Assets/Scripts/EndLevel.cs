@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EndLevel : MonoBehaviour {
 
-	void OnEnterTrigger2D(Collider2D other) {
+	void OnTriggerEnter2D(Collider2D other) {
+		Debug.Log(other);
 		if(other.tag=="Player") {
 			GameManager.Instance.NextLevel();
 		}
