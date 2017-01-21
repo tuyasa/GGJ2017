@@ -7,14 +7,13 @@ public class SoundManager : PersistentSingleton<SoundManager> {
 
 	[System.Serializable]
 	public class LevelSounds {
-		public AudioClip collectible;
-		public AudioClip start;
+	public AudioClip collectible;
+	public AudioClip start;
         public AudioClip end;
         public AudioClip background;
 
     }
-
-	public List<LevelSounds> levelsSounds;
+public List<LevelSounds> levelsSounds;
 
     public void PlaySingle(AudioClip clip )
     {
@@ -31,4 +30,5 @@ public class SoundManager : PersistentSingleton<SoundManager> {
 	void Update () {
 		
 	}
+
 }

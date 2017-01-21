@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class WaveController : MonoBehaviour {
 	
 	public float speedX = 3f;
 	public float speedY = 3f;
 	 
 	LineRenderer line;
-	int pos;
 	public Vector2 currentPoint;
 
 	public int directionY;
@@ -16,21 +15,19 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 //		directionY = 1;
 		currentPoint = Vector2.zero;
-		pos = 1;
-		line = GetComponent<LineRenderer>()	;
 	}	
-	
-	// Update is called once per frame
-	void Update () {
-		Debug.Log("dirY"+directionY);
-		currentPoint.x += speedX;
-		currentPoint.y += speedY * directionY;
+
+	void Update() {
 		if(Input.GetKeyDown(KeyCode.Space)) {
 			directionY = directionY == 1 ? -1 : 1;
-			line.numPositions++;
-			pos++;
-			line.SetPosition(pos, currentPoint);
 		}
-		line.SetPosition(pos, currentPoint);
+	}
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+		currentPoint.x += speedX * Time.deltaTime;
+		currentPoint.y += speedY * directionY * Time.deltaTime;
+
+		transform.position = new Vector3(currentPoint.x, currentPoint.y, transform.position.z);
 	}
 }
