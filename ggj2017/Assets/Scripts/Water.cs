@@ -16,6 +16,7 @@ public class Water : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.tag=="Player") {
+			SoundManager.Instance.PlayInterfaces();
 			WaveController wave = other.GetComponentInParent<WaveController>();		
 			wave.freeMove = false;
 		}
