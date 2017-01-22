@@ -12,7 +12,7 @@ public class GameManager : PersistentSingleton<GameManager> {
 	public List<bool> scores = new List<bool>();
 	// Use this for initialization
 	void Start () {
-		
+		SoundManager.Instance.PlayGameBG();
 	}
 	
 	// Update is called once per frame

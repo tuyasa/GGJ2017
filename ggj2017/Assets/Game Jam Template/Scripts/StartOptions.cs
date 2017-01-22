@@ -27,6 +27,8 @@ public class StartOptions : MonoBehaviour {
 	
 	void Awake()
 	{
+
+		
 		//Get a reference to ShowPanels attached to UI object
 		showPanels = GetComponent<ShowPanels> ();
 
@@ -34,6 +36,9 @@ public class StartOptions : MonoBehaviour {
 		playMusic = GetComponent<PlayMusic> ();
 	}
 
+	void Start() {
+		SoundManager.Instance.PlayerMenuBG()	;
+	}
 
 	public void StartButtonClicked()
 	{

@@ -19,6 +19,7 @@ public class Collectible : MonoBehaviour {
         	if(other.tag == "Player") {
         		GameManager.Instance.scores[index] = true;
         		//Score the player
+        		SoundManager.Instance.PlayCollectible();
 			Destroy(this.gameObject);
         	}
     	}

@@ -71,7 +71,7 @@ public class Pattern : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.tag == "Player") {
-			Debug.Log("Clear");
+			SoundManager.Instance.PlayObstacle();
 			trace.Clear();
 		}
 	}

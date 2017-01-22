@@ -18,22 +18,27 @@ public class Borders : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
-        {
-            //Debug.LogError("border" + this.gameObject.name);
-            //Invoke("Retry", 2f);
-            GameManager.Instance.Retry();
-            
+        {           
+		StartCoroutine(PlaySoundAndDie());
         }
 
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-//    		Debug.LogError(other.gameObject.name);
-//		Debug.LogError(this.gameObject.name);
-		GameManager.Instance.Retry();
-    	}
+		StartCoroutine(PlaySoundAndDie());
+    }
+
+
 
     	public void Retry() {
 		GameManager.Instance.Retry();
+    	}
+
+    	IEnumerator PlaySoundAndDie() {    		
+		SoundManager.Instance.PlayObstacle();
+		Time.timeScale = 0f;
+		yield return new WaitForSecondsRealtime(2f);
+		Time.timeScale = 1f;
+    		Retry();
     	}
 }
