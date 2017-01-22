@@ -14,7 +14,7 @@ public class WaveManager : MonoBehaviour {
 
 	public Vector2 currentPoint;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		currentPoint = Vector2.zero;
 		CreateWaveLine(transform.position);
 	}

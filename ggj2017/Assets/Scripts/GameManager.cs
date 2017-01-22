@@ -7,7 +7,7 @@ public class GameManager : PersistentSingleton<GameManager> {
 
 	public int level = 0;
 
-	public int maxLevel = 3;
+	public int maxLevel = 5;
 	// Use this for initialization
 	void Start () {
 		

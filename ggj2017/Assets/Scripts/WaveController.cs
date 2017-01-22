@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveController : MonoBehaviour {
-	
 	public float speedX = 3f;
 	public float speedY = 3f;
 	 
@@ -18,7 +17,7 @@ public class WaveController : MonoBehaviour {
 
 	void Update() {
 		if(Input.GetKeyDown(KeyCode.Space)) {
-			directionY = directionY == 1 ? -1 : 1;
+			directionY = directionY == 1 ? -1 : 1;		
 		}
 	}
 	
