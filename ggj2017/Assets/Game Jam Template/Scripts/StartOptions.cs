@@ -128,4 +128,11 @@ public class StartOptions : MonoBehaviour {
 		//Play music clip assigned to mainMusic in PlayMusic script
 		playMusic.PlaySelectedMusic (1);
 	}
+
+	public void LaunchCredits() {
+		SceneManager.LoadScene("Credits");
+		animMenuAlpha.SetTrigger ("fade");
+		Invoke("HideDelayed", fadeAlphaAnimationClip.length);
+	}
+
 }
