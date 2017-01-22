@@ -10,13 +10,16 @@ public class WaveController : MonoBehaviour {
 	public Vector2 currentPoint;
 
 	public int directionY;
+
+	public bool freeMove;
 	// Use this for initialization
 	void Start () {
+		freeMove = true;
 		currentPoint = transform.position;	
 	}	
 
 	void Update() {
-		if(Input.GetKeyDown(KeyCode.Space)) {
+		if(Input.GetKeyDown(KeyCode.Space) && freeMove) {
 			directionY = directionY == 1 ? -1 : 1;		
 		}
 	}
