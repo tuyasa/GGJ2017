@@ -63,6 +63,7 @@ public class Pattern : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D other) {
 		if(other.tag == "Player") {
+			Debug.Log(EvaluatePattern());
 			if(EvaluatePattern() > margin)
 				GameManager.Instance.Retry();
 		}
