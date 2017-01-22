@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Duplicate : MonoBehaviour {
 
-	WaveManager waveManager;
+	public WaveManager waveManager;
 	// Use this for initialization
 	void Start () {
 		waveManager = FindObjectOfType<WaveManager>();
-		if(waveManager != null) 
+		if(waveManager == null)
 			Debug.LogError("Not any wavemanager");
 	}
 	
