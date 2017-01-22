@@ -35,6 +35,7 @@ public class ClickAera : MonoBehaviour
 		if (other.tag == "Player") {
 			// print UI	
 			StartCoroutine(DisplayText());
+			SoundManager.Instance.PlayInterfaces();
 		}
 	}
 
