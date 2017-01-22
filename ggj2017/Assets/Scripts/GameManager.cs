@@ -21,6 +21,7 @@ public class GameManager : PersistentSingleton<GameManager> {
 	}
 
 	public void Retry() {
+		scores.Clear();
 		SceneManager.LoadScene("Level"+level);
 	}
 
