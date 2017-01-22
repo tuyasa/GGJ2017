@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour {
 
-
+	public int index	;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,7 +17,7 @@ public class Collectible : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
         	if(other.tag == "Player") {
-        		LevelManager.score++;
+        		GameManager.Instance.scores[index] = true;
         		//Score the player
 			Destroy(this.gameObject);
         	}

@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 	public int currentLevel;
 	public List<Collectible> collectibles;
-	public static int score;
+
+
 	// Use this for initialization
 	void Start () {
+		for (int i = 0; i < collectibles.Count; i++) {
+			collectibles[i].index = i;
+			GameManager.Instance.scores.Add(false);
+		}
 		GameManager.Instance.level = currentLevel;
 	}
 	

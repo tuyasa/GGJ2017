@@ -8,6 +8,8 @@ public class GameManager : PersistentSingleton<GameManager> {
 	public int level = 0;
 
 	public int maxLevel = 7;
+
+	public List<bool> scores = new List<bool>();
 	// Use this for initialization
 	void Start () {
 		
@@ -22,7 +24,11 @@ public class GameManager : PersistentSingleton<GameManager> {
 		SceneManager.LoadScene("Level"+level);
 	}
 
+	public void CodeScene() {		
+		SceneManager.LoadScene("Code"+level);
+	}
 	public void NextLevel() {
+		scores.Clear();
 		level++;
 		if(level <= maxLevel) {
 			SceneManager.LoadScene("Level"+level);	
