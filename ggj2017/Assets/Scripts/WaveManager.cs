@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour {
 	public float speedY;
 
 	public GameObject wavePrefab;
-	public List<GameObject> waves;
+	public List<WaveController> waves;
 
 
 	public Vector2 currentPoint;
@@ -29,6 +29,14 @@ public class WaveManager : MonoBehaviour {
 		GameObject go = Instantiate(wavePrefab, position, Quaternion.identity) as GameObject;
 		WaveController wave = go.GetComponent<WaveController>();
 		wave.directionY = direction;
-		waves.Add(go);
+		waves.Add(wave);
 	}
+
+	public void DiscardWaves() {
+		foreach(WaveController wave in waves) {
+			Destroy(wave.gameObject);
+		}
+		waves.Clear();
+	}
+
 }

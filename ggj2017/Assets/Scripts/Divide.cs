@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Duplicate : MonoBehaviour {
+public class Divide : MonoBehaviour {
 
 	public WaveManager waveManager;
 	// Use this for initialization
@@ -21,9 +21,7 @@ public class Duplicate : MonoBehaviour {
 		if(other.tag=="Player") {
 			GetComponent<BoxCollider2D>().isTrigger = false;
 			waveManager.DiscardWaves();
-			waveManager.CreateWaveLine(transform.position, -1);
-			waveManager.CreateWaveLine(transform.position, 1);
+			waveManager.CreateWaveLine(transform.position);
 		}
 	}
-
 }
